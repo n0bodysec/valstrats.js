@@ -1,3 +1,5 @@
+const constants = require('../utils/constants');
+
 const account = function account(api)
 {
 	this.login = async () =>
@@ -24,6 +26,57 @@ const account = function account(api)
 				}
 
 				resolve(res);
+			});
+		});
+	};
+
+	this.saveStrat = async (uuid, save = true) =>
+	{
+		if (api.getAuthenticated() === false)
+		{
+			throw new Error('you are not authenticated');
+		}
+
+		return new Promise((resolve, reject) =>
+		{
+			api.socket.emit(save === true ? 'create' : 'remove', constants.UserEndpoints.Favorites, (save === true ? ({ stratId: uuid }) : (uuid)), (err, res) =>
+			{
+				if (err) reject(err);
+				else resolve(res);
+			});
+		});
+	};
+
+	this.likeStratToggle = async (uuid) =>
+	{
+		if (api.getAuthenticated() === false)
+		{
+			throw new Error('you are not authenticated');
+		}
+
+		return new Promise((resolve, reject) =>
+		{
+			api.socket.emit('create', constants.UserEndpoints.Likes, { stratId: uuid }, (err, res) =>
+			{
+				if (err) reject(err);
+				else resolve(res);
+			});
+		});
+	};
+
+	this.commentStrat = async (uuid, text, remove = false) =>
+	{
+		if (api.getAuthenticated() === false)
+		{
+			throw new Error('you are not authenticated');
+		}
+
+		return new Promise((resolve, reject) =>
+		{
+			api.socket.emit(remove === false ? 'create' : 'remove', constants.StratEndpoins.UserPost, { stratId: uuid, text: text }, (err, res) =>
+			{
+				if (err) reject(err);
+				else resolve(res);
 			});
 		});
 	};
