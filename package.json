@@ -1,0 +1,41 @@
+{
+  "name": "valstratsjs",
+  "version": "1.0.0",
+  "description": "An unofficial Hitbox's Valorant DB API",
+  "main": "index.js",
+  "dependencies": {
+    "@feathersjs/authentication-client": "^4.5.11",
+    "@feathersjs/feathers": "^4.5.11",
+    "@feathersjs/socketio-client": "^4.5.11",
+    "log4js": "^6.3.0",
+    "socket.io-client": "^2.4.0"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "npm-check-updates": "^12.0.3"
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n0bodysec/valstrats.js.git"
+  },
+  "keywords": [
+    "valstrats",
+    "valstrats.js",
+    "hitbox",
+    "valorant",
+    "database",
+    "unofficial"
+  ],
+  "author": "Nobody <admin@n0bodysec.com> (https://n0bodysec.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/n0bodysec/valstrats.js/issues"
+  },
+  "homepage": "https://github.com/n0bodysec/valstrats.js#readme"
+}
