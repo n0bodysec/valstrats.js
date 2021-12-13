@@ -16,6 +16,10 @@ module.exports = Object.freeze({
 
 	},
 
+	StratEndpoins: {
+		UserPost: 'strat-user-post',
+	},
+
 	StratSortTypes: {
 		Newly: 'createdAt',
 		Popular: 'likesCount',

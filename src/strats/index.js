@@ -19,6 +19,23 @@ const strats = function strats(api)
 		});
 	};
 
+	this.getUsersPosts = async (uuid, limit = 10, skip = 0) =>
+	{
+		if (api.getAuthenticated() === false)
+		{
+			throw new Error('you are not authenticated');
+		}
+
+		return new Promise((resolve, reject) =>
+		{
+			api.socket.emit('find', constants.StratEndpoins.UserPost, { stratId: uuid, $limit: limit, $skip: skip, $sort: { createdAt: -1 } }, (err, res) =>
+			{
+				if (err) reject(err);
+				else resolve(res);
+			});
+		});
+	};
+
 	this.getInfo = async () =>
 	{
 		if (api.getAuthenticated() === false)
