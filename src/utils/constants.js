@@ -18,6 +18,7 @@ module.exports = Object.freeze({
 
 	StratEndpoins: {
 		UserPost: 'strat-user-post',
+		Report: 'report-strat',
 	},
 
 	StratSortTypes: {

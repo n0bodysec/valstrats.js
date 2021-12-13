@@ -69,6 +69,23 @@ const strats = function strats(api)
 			});
 		});
 	};
+
+	this.report = async (stratId, reason) =>
+	{
+		if (api.getAuthenticated() === false)
+		{
+			throw new Error('you are not authenticated');
+		}
+
+		return new Promise((resolve, reject) =>
+		{
+			api.socket.emit('create', constants.StratEndpoins.Report., { stratId: stratId, reason: reason }, (err, res) =>
+			{
+				if (err) reject(err);
+				else resolve(res);
+			});
+		});
+	};
 };
 
 module.exports = strats;
