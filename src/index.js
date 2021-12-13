@@ -69,6 +69,12 @@ const API = function API(accessToken)
 		});
 	};
 
+	this.closeAndExit = () =>
+	{
+		this.socket.disconnect();
+		process.exit(0);
+	};
+
 	this.strats = new Strats(this);
 	this.account = new Account(this);
 	this.user = new User(this);
