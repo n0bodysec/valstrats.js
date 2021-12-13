@@ -1,3 +1,3 @@
 const Valstrats = require('./src');
 
-module.exports = { Valstrats };
+module.exports = Valstrats;
