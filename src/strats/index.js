@@ -2,6 +2,23 @@ const constants = require('../utils/constants');
 
 const strats = function strats(api)
 {
+	this.get = async (uuid) =>
+	{
+		if (api.getAuthenticated() === false)
+		{
+			throw new Error('you are not authenticated');
+		}
+
+		return new Promise((resolve, reject) =>
+		{
+			api.socket.emit('get', constants.Endpoints.Strats, uuid, (err, res) =>
+			{
+				if (err) reject(err);
+				else resolve(res);
+			});
+		});
+	};
+
 	this.getInfo = async () =>
 	{
 		if (api.getAuthenticated() === false)
