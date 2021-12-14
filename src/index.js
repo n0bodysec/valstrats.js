@@ -8,6 +8,7 @@ const constants = require('./utils/constants');
 const Strats = require('./strats');
 const Account = require('./account');
 const User = require('./user');
+const Services = require('./services');
 
 const API = function API(accessToken)
 {
@@ -52,23 +53,6 @@ const API = function API(accessToken)
 	this.setClient = (client) => { this.client = client; };
 	this.getClient = () => { return this.client; };
 
-	this.findService = async (service, limit = '-1') =>
-	{
-		if (this.authenticated === false)
-		{
-			throw new Error('you are not authenticated');
-		}
-
-		return new Promise((resolve, reject) =>
-		{
-			this.socket.emit('find', service, { $limit: limit }, (err, res) =>
-			{
-				if (err) reject(err);
-				else resolve(res);
-			});
-		});
-	};
-
 	this.closeAndExit = () =>
 	{
 		this.socket.disconnect();
@@ -78,6 +62,7 @@ const API = function API(accessToken)
 	this.strats = new Strats(this);
 	this.account = new Account(this);
 	this.user = new User(this);
+	this.services = new Services(this);
 };
 
 module.exports = API;
