@@ -2,7 +2,6 @@ const feathers = require('@feathersjs/feathers');
 const socketio = require('@feathersjs/socketio-client');
 const io = require('socket.io-client');
 const auth = require('@feathersjs/authentication-client');
-const logger = require('./utils/logger');
 const constants = require('./utils/constants');
 
 const Strats = require('./strats');
@@ -33,11 +32,12 @@ const API = function API(accessToken)
 
 			if (error.message === 'jwt expired')
 			{
-				logger('token expired', 'warn');
 				this.authenticated = false;
 			}
 
-			return context;
+			throw Error(error.message);
+
+			// return context;
 		},
 	});
 
