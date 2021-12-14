@@ -11,7 +11,7 @@ const strats = function strats(api)
 
 		return new Promise((resolve, reject) =>
 		{
-			api.socket.emit('get', constants.Endpoints.Strats, uuid, (err, res) =>
+			api.socket.emit('get', constants.services.strats, uuid, (err, res) =>
 			{
 				if (err) reject(err);
 				else resolve(res);
@@ -28,7 +28,7 @@ const strats = function strats(api)
 
 		return new Promise((resolve, reject) =>
 		{
-			api.socket.emit('find', constants.Endpoints.Strat.UserPost, { stratId: uuid, $limit: limit, $skip: skip, $sort: { createdAt: -1 } }, (err, res) =>
+			api.socket.emit('find', constants.services.stratUserPost, { stratId: uuid, $limit: limit, $skip: skip, $sort: { createdAt: -1 } }, (err, res) =>
 			{
 				if (err) reject(err);
 				else resolve(res);
@@ -45,7 +45,7 @@ const strats = function strats(api)
 
 		return new Promise((resolve, reject) =>
 		{
-			api.socket.emit('find', constants.Endpoints.Strats, { $limit: 0, $skip: 0, $sort: { createdAt: -1 } }, (err, res) =>
+			api.socket.emit('find', constants.services.strats, { $limit: 0, $skip: 0, $sort: { createdAt: -1 } }, (err, res) =>
 			{
 				if (err) reject(err);
 				else resolve(res);
@@ -62,7 +62,7 @@ const strats = function strats(api)
 
 		return new Promise((resolve, reject) =>
 		{
-			api.socket.emit('find', constants.Endpoints.Strats, { $limit: limit, $skip: skip, $sort: { createdAt: -1 } }, (err, res) =>
+			api.socket.emit('find', constants.services.strats, { $limit: limit, $skip: skip, $sort: { createdAt: -1 } }, (err, res) =>
 			{
 				if (err) reject(err);
 				else resolve(res);
@@ -79,7 +79,7 @@ const strats = function strats(api)
 
 		return new Promise((resolve, reject) =>
 		{
-			api.socket.emit('create', constants.Endpoints.Strat.Report, { stratId: stratId, reason: reason }, (err, res) =>
+			api.socket.emit('create', constants.services.reportStrat, { stratId: stratId, reason: reason }, (err, res) =>
 			{
 				if (err) reject(err);
 				else resolve(res);

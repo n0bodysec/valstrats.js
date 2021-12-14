@@ -11,7 +11,7 @@ const user = function user(api)
 
 		return new Promise((resolve, reject) =>
 		{
-			api.socket.emit('get', constants.Endpoints.User.Users, userId, (err, res) =>
+			api.socket.emit('get', constants.services.users, userId, (err, res) =>
 			{
 				if (err) reject(err);
 				else resolve(res);
@@ -28,7 +28,7 @@ const user = function user(api)
 
 		return new Promise((resolve, reject) =>
 		{
-			api.socket.emit('get', constants.Endpoints.User.Likes, uuid, (err, res) =>
+			api.socket.emit('get', constants.services.userManageLikes, uuid, (err, res) =>
 			{
 				if (err) reject(err);
 				else resolve(res);
@@ -45,7 +45,7 @@ const user = function user(api)
 
 		return new Promise((resolve, reject) =>
 		{
-			api.socket.emit('get', constants.Endpoints.User.Favorites, uuid, (err, res) =>
+			api.socket.emit('get', constants.services.userManageSavedFavorites, uuid, (err, res) =>
 			{
 				if (err) reject(err);
 				else resolve(res);

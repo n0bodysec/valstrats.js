@@ -16,7 +16,7 @@ const API = function API(accessToken)
 		throw new Error('missing accessToken');
 	}
 
-	this.socket = io(constants.API_URL, {
+	this.socket = io(constants.backendUrl, {
 		transports: ['websocket'],
 		upgrade: false,
 	});
@@ -52,7 +52,7 @@ const API = function API(accessToken)
 	this.setClient = (client) => { this.client = client; };
 	this.getClient = () => { return this.client; };
 
-	this.findEndpoint = async (endpoint, limit = '-1') =>
+	this.findService = async (service, limit = '-1') =>
 	{
 		if (this.authenticated === false)
 		{
@@ -61,7 +61,7 @@ const API = function API(accessToken)
 
 		return new Promise((resolve, reject) =>
 		{
-			this.socket.emit('find', endpoint, { $limit: limit }, (err, res) =>
+			this.socket.emit('find', service, { $limit: limit }, (err, res) =>
 			{
 				if (err) reject(err);
 				else resolve(res);

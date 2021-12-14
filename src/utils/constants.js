@@ -1,28 +1,25 @@
 module.exports = Object.freeze({
-	API_URL: 'https://backend.hitboxking.com', // https://backend.hitboxking.com/socket.io/
+	backendUrl: 'https://backend.hitboxking.com', // https://backend.hitboxking.com/socket.io/
 
-	Endpoints: { // find
-		Strats: 'strats',
-		Characters: 'characters',
-		Maps: 'maps',
-		Teams: 'teams',
-		Tournaments: 'tournaments',
-
-		User: { // get
-			Users: 'users',
-			Likes: 'user-manage-likes',
-			Favorites: 'user-manage-saved-favorites',
-		},
-
-		Strat: { // create
-			UserPost: 'strat-user-post',
-			Report: 'report-strat',
-		},
+	services: {
+		users: 'users',
+		characters: 'characters',
+		teams: 'teams',
+		maps: 'maps',
+		tournaments: 'tournaments',
+		regions: 'regions',
+		strats: 'strats',
+		characterAbility: 'character-skills',
+		uploadStratImage: 'upload-strat-image',
+		userManageSavedFavorites: 'user-manage-saved-favorites',
+		userManageLikes: 'user-manage-likes',
+		stratUserPost: 'strat-user-post',
+		reportStrat: 'report-strat',
 	},
 
-	StratSortTypes: {
-		Newly: 'createdAt',
-		Popular: 'likesCount',
-		Comments: 'commentsCount',
+	sortTypes: {
+		newly: 'createdAt',
+		popular: 'likesCount',
+		comments: 'commentsCount',
 	},
 });
