@@ -7,18 +7,17 @@ module.exports = Object.freeze({
 		Maps: 'maps',
 		Teams: 'teams',
 		Tournaments: 'tournaments',
-	},
 
-	UserEndpoints: { // get
-		Users: 'users',
-		Likes: 'user-manage-likes',
-		Favorites: 'user-manage-saved-favorites',
+		User: { // get
+			Users: 'users',
+			Likes: 'user-manage-likes',
+			Favorites: 'user-manage-saved-favorites',
+		},
 
-	},
-
-	StratEndpoins: {
-		UserPost: 'strat-user-post',
-		Report: 'report-strat',
+		Strat: { // create
+			UserPost: 'strat-user-post',
+			Report: 'report-strat',
+		},
 	},
 
 	StratSortTypes: {

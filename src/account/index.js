@@ -56,7 +56,7 @@ const account = function account(api)
 
 		return new Promise((resolve, reject) =>
 		{
-			api.socket.emit(save === true ? 'create' : 'remove', constants.UserEndpoints.Favorites, (save === true ? ({ stratId: uuid }) : (uuid)), (err, res) =>
+			api.socket.emit(save === true ? 'create' : 'remove', constants.Endpoints.User.Favorites, (save === true ? ({ stratId: uuid }) : (uuid)), (err, res) =>
 			{
 				if (err) reject(err);
 				else resolve(res);
@@ -73,7 +73,7 @@ const account = function account(api)
 
 		return new Promise((resolve, reject) =>
 		{
-			api.socket.emit('create', constants.UserEndpoints.Likes, { stratId: uuid }, (err, res) =>
+			api.socket.emit('create', constants.Endpoints.User.Likes, { stratId: uuid }, (err, res) =>
 			{
 				if (err) reject(err);
 				else resolve(res);
@@ -90,7 +90,7 @@ const account = function account(api)
 
 		return new Promise((resolve, reject) =>
 		{
-			api.socket.emit(remove === false ? 'create' : 'remove', constants.StratEndpoins.UserPost, { stratId: uuid, text: text }, (err, res) =>
+			api.socket.emit(remove === false ? 'create' : 'remove', constants.Endpoints.Strat.UserPost, { stratId: uuid, text: text }, (err, res) =>
 			{
 				if (err) reject(err);
 				else resolve(res);

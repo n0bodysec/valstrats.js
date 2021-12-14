@@ -28,7 +28,7 @@ const strats = function strats(api)
 
 		return new Promise((resolve, reject) =>
 		{
-			api.socket.emit('find', constants.StratEndpoins.UserPost, { stratId: uuid, $limit: limit, $skip: skip, $sort: { createdAt: -1 } }, (err, res) =>
+			api.socket.emit('find', constants.Endpoints.Strat.UserPost, { stratId: uuid, $limit: limit, $skip: skip, $sort: { createdAt: -1 } }, (err, res) =>
 			{
 				if (err) reject(err);
 				else resolve(res);
@@ -79,7 +79,7 @@ const strats = function strats(api)
 
 		return new Promise((resolve, reject) =>
 		{
-			api.socket.emit('create', constants.StratEndpoins.Report., { stratId: stratId, reason: reason }, (err, res) =>
+			api.socket.emit('create', constants.Endpoints.Strat.Report, { stratId: stratId, reason: reason }, (err, res) =>
 			{
 				if (err) reject(err);
 				else resolve(res);
