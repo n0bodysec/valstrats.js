@@ -15,6 +15,7 @@ module.exports = Object.freeze({
 		userManageLikes: 'user-manage-likes',
 		stratUserPost: 'strat-user-post',
 		reportStrat: 'report-strat',
+		stratUserRanking: 'strat-user-ranking',
 	},
 
 	sortTypes: {
