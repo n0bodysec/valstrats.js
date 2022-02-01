@@ -116,6 +116,19 @@ const account = function account(api)
 			});
 		});
 	};
+
+	this.proposeStrat = async () =>
+	{
+		if (api.getAuthenticated() === false)
+		{
+			throw new Error('you are not authenticated');
+		}
+
+		return new Promise((resolve, reject) =>
+		{
+			throw new Error('proposeStrat() is not production-ready, see: https://github.com/n0bodysec/valstrats.js/discussions/2');
+		});
+	};
 };
 
 module.exports = account;
