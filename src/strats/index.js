@@ -28,7 +28,9 @@ const strats = function strats(api)
 
 		return new Promise((resolve, reject) =>
 		{
-			api.socket.emit('find', constants.services.stratUserPost, { stratId: uuid, $limit: limit, $skip: skip, $sort: { createdAt: -1 } }, (err, res) =>
+			api.socket.emit('find', constants.services.stratUserPost, {
+				stratId: uuid, $limit: limit, $skip: skip, $sort: { createdAt: -1 },
+			}, (err, res) =>
 			{
 				if (err) reject(err);
 				else resolve(res);

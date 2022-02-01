@@ -39,7 +39,9 @@ const account = function account(api)
 
 		return new Promise((resolve, reject) =>
 		{
-			api.socket.emit('find', constants.services.strats, { $limit: limit, $skip: skip, $sort: { createdAt: -1 }, saved: true }, (err, res) =>
+			api.socket.emit('find', constants.services.strats, {
+				$limit: limit, $skip: skip, $sort: { createdAt: -1 }, saved: true,
+			}, (err, res) =>
 			{
 				if (err) reject(err);
 				else resolve(res);
