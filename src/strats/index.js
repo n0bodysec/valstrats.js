@@ -64,24 +64,8 @@ const strats = function strats(api)
 
 		return new Promise((resolve, reject) =>
 		{
+			// TODO: add premium search ("is_premium":true) and ownerId ("ownerId":1)
 			api.socket.emit('find', constants.services.strats, { $limit: limit, $skip: skip, $sort: { createdAt: -1 } }, (err, res) =>
-			{
-				if (err) reject(err);
-				else resolve(res);
-			});
-		});
-	};
-
-	this.report = async (stratId, reason) =>
-	{
-		if (api.getAuthenticated() === false)
-		{
-			throw new Error('you are not authenticated');
-		}
-
-		return new Promise((resolve, reject) =>
-		{
-			api.socket.emit('create', constants.services.reportStrat, { stratId: stratId, reason: reason }, (err, res) =>
 			{
 				if (err) reject(err);
 				else resolve(res);
