@@ -2,11 +2,11 @@ const constants = require('../utils/constants');
 
 const account = function account(api)
 {
-	this.login = async () =>
+	this.login = async (accessToken = null) =>
 	{
 		return new Promise((resolve, reject) =>
 		{
-			api.socket.emit('authenticate', { strategy: 'jwt', accessToken: api.accessToken }, (err, res) =>
+			api.socket.emit('authenticate', { strategy: 'jwt', accessToken: accessToken ?? api.accessToken }, (err, res) =>
 			{
 				if (err)
 				{

@@ -4,11 +4,6 @@ const strats = function strats(api)
 {
 	this.get = async (uuid) =>
 	{
-		if (api.getAuthenticated() === false)
-		{
-			throw new Error('you are not authenticated');
-		}
-
 		return new Promise((resolve, reject) =>
 		{
 			api.socket.emit('get', constants.services.strats, uuid, (err, res) =>
@@ -21,11 +16,6 @@ const strats = function strats(api)
 
 	this.getUsersPosts = async (uuid, limit = 10, skip = 0) =>
 	{
-		if (api.getAuthenticated() === false)
-		{
-			throw new Error('you are not authenticated');
-		}
-
 		return new Promise((resolve, reject) =>
 		{
 			api.socket.emit('find', constants.services.stratUserPost, {
@@ -40,11 +30,6 @@ const strats = function strats(api)
 
 	this.getInfo = async () =>
 	{
-		if (api.getAuthenticated() === false)
-		{
-			throw new Error('you are not authenticated');
-		}
-
 		return new Promise((resolve, reject) =>
 		{
 			api.socket.emit('find', constants.services.strats, { $limit: 0, $skip: 0, $sort: { createdAt: -1 } }, (err, res) =>
@@ -57,14 +42,8 @@ const strats = function strats(api)
 
 	this.getData = async (limit = 6, skip = 0) =>
 	{
-		if (api.getAuthenticated() === false)
-		{
-			throw new Error('you are not authenticated');
-		}
-
 		return new Promise((resolve, reject) =>
 		{
-			// TODO: add premium search ("is_premium":true) and ownerId ("ownerId":1)
 			api.socket.emit('find', constants.services.strats, { $limit: limit, $skip: skip, $sort: { createdAt: -1 } }, (err, res) =>
 			{
 				if (err) reject(err);

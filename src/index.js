@@ -11,11 +11,6 @@ const Services = require('./services');
 
 const API = function API(accessToken)
 {
-	if (!accessToken || accessToken.length === 0)
-	{
-		throw new Error('missing accessToken');
-	}
-
 	this.socket = io(constants.backendUrl, {
 		transports: ['websocket'],
 		upgrade: false,
