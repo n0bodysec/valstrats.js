@@ -1,6 +1,5 @@
 const Valstrats = require('../index');
 const constants = require('../src/utils/constants');
-const logger = require('../src/utils/logger');
 require('dotenv').config({ path: __dirname + '/.env' });
 
 (async () =>
@@ -16,6 +15,6 @@ require('dotenv').config({ path: __dirname + '/.env' });
 	}
 	catch (e)
 	{
-		logger(e, 'error');
+		console.error(e);
 	}
 })();
