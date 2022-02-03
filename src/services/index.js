@@ -2,11 +2,11 @@ const constants = require('../utils/constants');
 
 const services = function services(api)
 {
-	this.find = async (service, limit = '-1') =>
+	this.find = async (service, limit = '-1', skip = 0) =>
 	{
 		return new Promise((resolve, reject) =>
 		{
-			api.socket.emit('find', service, { $limit: limit }, (err, res) =>
+			api.socket.emit('find', service, { $limit: limit, $skip: skip }, (err, res) =>
 			{
 				if (err) reject(err);
 				else resolve(res);
