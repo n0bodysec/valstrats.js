@@ -8,6 +8,7 @@ const Strats = require('./strats');
 const Account = require('./account');
 const User = require('./user');
 const Services = require('./services');
+const Utils = require('./utils');
 
 const API = function API(accessToken)
 {
@@ -58,6 +59,7 @@ const API = function API(accessToken)
 	this.account = new Account(this);
 	this.user = new User(this);
 	this.services = new Services(this);
+	this.utils = new Utils(this);
 };
 
 module.exports = API;
