@@ -7,15 +7,15 @@
     "@feathersjs/authentication-client": "^4.5.13",
     "@feathersjs/feathers": "^4.5.12",
     "@feathersjs/socketio-client": "^4.5.13",
-    "log4js": "^6.4.1",
+    "log4js": "^6.4.3",
     "socket.io-client": "^2.4.0"
   },
   "devDependencies": {
     "dotenv": "^16.0.0",
-    "eslint": "^8.8.0",
+    "eslint": "^8.11.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
-    "npm-check-updates": "^12.3.0"
+    "npm-check-updates": "^12.5.4"
   },
   "scripts": {
     "test": "node test/test.js"
