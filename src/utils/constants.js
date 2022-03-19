@@ -16,6 +16,8 @@ module.exports = Object.freeze({
 		stratUserPost: 'strat-user-post',
 		reportStrat: 'report-strat',
 		stratUserRanking: 'strat-user-ranking',
+		uploadStratVideo: 'upload-strat-video',
+		stratGenVideoLink: 'strat-gen-videolink',
 	},
 
 	sortTypes: {
