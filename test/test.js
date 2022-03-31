@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const Valstrats = require('../index');
 const constants = require('../src/utils/constants');
 require('dotenv').config({ path: __dirname + '/.env' });

@@ -6,7 +6,7 @@ const account = function account(api)
 	{
 		return new Promise((resolve, reject) =>
 		{
-			api.socket.emit('authenticate', { strategy: 'jwt', accessToken: accessToken ?? api.accessToken }, (err, res) =>
+			api.socket.emit('authenticate', { strategy: 'jwt', accessToken }, (err, res) =>
 			{
 				if (err)
 				{
@@ -92,7 +92,7 @@ const account = function account(api)
 
 		return new Promise((resolve, reject) =>
 		{
-			api.socket.emit(remove === false ? 'create' : 'remove', constants.services.stratUserPost, { stratId: uuid, text: text }, (err, res) =>
+			api.socket.emit(remove === false ? 'create' : 'remove', constants.services.stratUserPost, { stratId: uuid, text }, (err, res) =>
 			{
 				if (err) reject(err);
 				else resolve(res);
@@ -109,7 +109,7 @@ const account = function account(api)
 
 		return new Promise((resolve, reject) =>
 		{
-			api.socket.emit('create', constants.services.reportStrat, { stratId: stratId, reason: reason }, (err, res) =>
+			api.socket.emit('create', constants.services.reportStrat, { stratId, reason }, (err, res) =>
 			{
 				if (err) reject(err);
 				else resolve(res);
@@ -124,7 +124,7 @@ const account = function account(api)
 			throw new Error('you are not authenticated');
 		}
 
-		return new Promise((resolve, reject) =>
+		return new Promise(() =>
 		{
 			throw new Error('proposeStrat() is not production-ready, see: https://github.com/n0bodysec/valstrats.js/discussions/2');
 		});
