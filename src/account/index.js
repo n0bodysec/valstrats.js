@@ -6,7 +6,7 @@ const account = function account(api)
 	{
 		return new Promise((resolve, reject) =>
 		{
-			api.socket.emit('authenticate', { strategy: 'jwt', accessToken }, (err, res) =>
+			api.socket.emit('authenticate', { strategy: 'jwt', accessToken: accessToken ?? api.accessToken }, (err, res) =>
 			{
 				if (err)
 				{
