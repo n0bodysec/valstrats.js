@@ -1,3 +1,3 @@
-const Valstrats = require('./src');
+import Valstrats from './src/index.js';
 
-module.exports = Valstrats;
+export default Valstrats;

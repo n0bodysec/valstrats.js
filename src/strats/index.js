@@ -1,4 +1,4 @@
-const constants = require('../utils/constants');
+import constants from '../utils/constants.js';
 
 const strats = function strats(api)
 {
@@ -53,4 +53,4 @@ const strats = function strats(api)
 	};
 };
 
-module.exports = strats;
+export default strats;

@@ -1,8 +1,8 @@
-/* eslint-disable */
+/* eslint-disable no-unused-vars */
 
-const Valstrats = require('../index');
-const constants = require('../src/utils/constants');
-require('dotenv').config({ path: __dirname + '/.env' });
+import Valstrats from '../index.js';
+import constants from '../src/utils/constants.js';
+import 'dotenv/config';
 
 (async () =>
 {

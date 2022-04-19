@@ -1,4 +1,4 @@
-const https = require('https'); // ? Should be replaced by axios?
+import https from 'https'; // ? Should be replaced by axios?
 
 const utils = function utils()
 {
@@ -11,4 +11,4 @@ const utils = function utils()
 	};
 };
 
-module.exports = utils;
+export default utils;

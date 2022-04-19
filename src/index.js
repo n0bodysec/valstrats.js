@@ -1,14 +1,14 @@
-const feathers = require('@feathersjs/feathers');
-const socketio = require('@feathersjs/socketio-client');
-const io = require('socket.io-client');
-const auth = require('@feathersjs/authentication-client');
-const constants = require('./utils/constants');
+import feathers from '@feathersjs/feathers';
+import socketio from '@feathersjs/socketio-client';
+import io from 'socket.io-client';
+import auth from '@feathersjs/authentication-client';
+import constants from './utils/constants.js';
 
-const Strats = require('./strats');
-const Account = require('./account');
-const User = require('./user');
-const Services = require('./services');
-const Utils = require('./utils');
+import Strats from './strats/index.js';
+import Account from './account/index.js';
+import User from './user/index.js';
+import Services from './services/index.js';
+import Utils from './utils/index.js';
 
 const API = function API(accessToken)
 {
@@ -62,4 +62,4 @@ const API = function API(accessToken)
 	this.utils = new Utils(this);
 };
 
-module.exports = API;
+export default API;

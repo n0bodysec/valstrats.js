@@ -1,4 +1,4 @@
-const constants = require('../utils/constants');
+import constants from '../utils/constants.js';
 
 const user = function user(api)
 {
@@ -54,4 +54,4 @@ const user = function user(api)
 	};
 };
 
-module.exports = user;
+export default user;

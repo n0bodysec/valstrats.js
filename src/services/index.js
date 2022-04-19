@@ -1,4 +1,4 @@
-const constants = require('../utils/constants');
+import constants from '../utils/constants.js';
 
 const services = function services(api)
 {
@@ -32,4 +32,4 @@ const services = function services(api)
 	};
 };
 
-module.exports = services;
+export default services;

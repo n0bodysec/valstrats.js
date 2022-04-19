@@ -1,4 +1,4 @@
-module.exports = Object.freeze({
+export default Object.freeze({
 	backendUrl: 'https://backend.hitboxking.com', // https://backend.hitboxking.com/socket.io/
 
 	services: {
