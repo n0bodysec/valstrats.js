@@ -12,9 +12,9 @@
   },
   "devDependencies": {
     "dotenv": "^16.0.1",
-    "eslint": "^8.17.0",
+    "eslint": "^8.18.0",
     "eslint-config-n0bodysec": "github:n0bodysec/eslint-config-n0bodysec",
-    "npm-check-updates": "^13.1.5"
+    "npm-check-updates": "^14.1.1"
   },
   "scripts": {
     "test": "node test/test.js"
