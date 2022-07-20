@@ -14,6 +14,8 @@ import 'dotenv/config';
 		const info = await vdb.strats.getInfo();
 		const maps = await vdb.services.find(constants.services.maps);
 		const strat = await vdb.strats.get('c87d6ae1-ed36-41bd-bebf-f0d7ec17c9cb');
+
+		console.log(strat);
 	}
 	catch (e)
 	{
