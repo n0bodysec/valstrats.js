@@ -16,7 +16,7 @@ const services = function services(api)
 
 	this.uploadStratImage = async (convertedBase) =>
 	{
-		if (api.getAuthenticated() === false)
+		if (api.authenticated === false)
 		{
 			throw new Error('you are not authenticated');
 		}

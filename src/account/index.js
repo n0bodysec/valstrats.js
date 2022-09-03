@@ -10,20 +10,10 @@ const account = function account(api)
 			{
 				if (err)
 				{
-					api.setAuthenticated(false);
+					api.authenticated = false;
 					reject(err);
 				}
-				else
-				{
-					if (res.accessToken) // eslint-disable-line no-lonely-if
-					{
-						api.setAuthenticated(true);
-					}
-					else
-					{
-						api.setAuthenticated(false);
-					}
-				}
+				else api.authenticated = res.accessToken != null;
 
 				resolve(res);
 			});
@@ -32,7 +22,7 @@ const account = function account(api)
 
 	this.findSavedStrats = async (limit = 6, skip = 0) =>
 	{
-		if (api.getAuthenticated() === false)
+		if (api.authenticated === false)
 		{
 			throw new Error('you are not authenticated');
 		}
@@ -51,7 +41,7 @@ const account = function account(api)
 
 	this.saveStrat = async (uuid, save = true) =>
 	{
-		if (api.getAuthenticated() === false)
+		if (api.authenticated === false)
 		{
 			throw new Error('you are not authenticated');
 		}
@@ -68,7 +58,7 @@ const account = function account(api)
 
 	this.likeStratToggle = async (uuid) =>
 	{
-		if (api.getAuthenticated() === false)
+		if (api.authenticated === false)
 		{
 			throw new Error('you are not authenticated');
 		}
@@ -85,7 +75,7 @@ const account = function account(api)
 
 	this.commentStrat = async (uuid, text, remove = false) =>
 	{
-		if (api.getAuthenticated() === false)
+		if (api.authenticated === false)
 		{
 			throw new Error('you are not authenticated');
 		}
@@ -102,7 +92,7 @@ const account = function account(api)
 
 	this.reportStrat = async (stratId, reason) =>
 	{
-		if (api.getAuthenticated() === false)
+		if (api.authenticated === false)
 		{
 			throw new Error('you are not authenticated');
 		}
@@ -119,7 +109,7 @@ const account = function account(api)
 
 	this.proposeStrat = async () =>
 	{
-		if (api.getAuthenticated() === false)
+		if (api.authenticated === false)
 		{
 			throw new Error('you are not authenticated');
 		}

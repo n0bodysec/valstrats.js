@@ -4,7 +4,7 @@ const user = function user(api)
 {
 	this.get = async (userId) =>
 	{
-		if (api.getAuthenticated() === false)
+		if (api.authenticated === false)
 		{
 			throw new Error('you are not authenticated');
 		}
@@ -21,7 +21,7 @@ const user = function user(api)
 
 	this.getLikes = async (uuid) =>
 	{
-		if (api.getAuthenticated() === false)
+		if (api.authenticated === false)
 		{
 			throw new Error('you are not authenticated');
 		}
@@ -38,7 +38,7 @@ const user = function user(api)
 
 	this.getFavorites = async (uuid) =>
 	{
-		if (api.getAuthenticated() === false)
+		if (api.authenticated === false)
 		{
 			throw new Error('you are not authenticated');
 		}

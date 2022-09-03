@@ -40,15 +40,6 @@ const API = function API(accessToken)
 	this.authenticated = false;
 	this.accessToken = accessToken;
 
-	this.setAuthenticated = (bool) => { this.authenticated = (bool === true); };
-	this.getAuthenticated = () => { return this.authenticated; };
-
-	this.setSocket = (socket) => { this.socket = socket; };
-	this.getSocket = () => { return this.socket; };
-
-	this.setClient = (client) => { this.client = client; };
-	this.getClient = () => { return this.client; };
-
 	this.closeAndExit = () =>
 	{
 		this.socket.disconnect();
