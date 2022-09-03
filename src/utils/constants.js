@@ -1,5 +1,5 @@
 export default Object.freeze({
-	backendUrl: 'https://backend.hitboxking.com', // https://backend.hitboxking.com/socket.io/
+	backendUrl: 'https://backend.valostrats.com', // https://backend.valostrats.com/socket.io/
 
 	services: {
 		users: 'users',
