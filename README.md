@@ -2,26 +2,15 @@
 
 Valstrats.js is an **unofficial** [Hitbox's Valorant DB](https://hitboxking.com/micros) API.
 
-## Table of contents
-
-- [🃏 Features](#-features)
-- [🚀 Deploy](#-deploy)
-- [📝 Changelog](#-changelog)
-- [👏 Contribution](#-contribution)
-- [👍 Acknowledgements](#-acknowledgements)
-- [📜 License](#-license)
-- [📞 Contact](#-contact)
-- [📜 Notice](#-notice)
-
 ## 🃏 Features
 
 - Explore the API.
 - Search strats with custom search terms.
 - Get user-related stuff.
 
-## 🚀 Deploy
+## 🚀 Usage
 
-To deploy, you can follow the guide on the [wiki](../../wikis/home).
+Check the examples in the [examples](examples/) folder.
 
 ## 📝 Changelog
 
@@ -33,7 +22,7 @@ Please see [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
 
 ## 👍 Acknowledgements
 
-- [Lucas 'HITBOXKING' Glez-Sabariegos](https://hitboxking.com) - For his valorant strats platform
+- [Lucas 'HITBOXKING' Glez-Sabariegos](https://hitboxking.com) - For his valorant strats platform.
 
 ## 📜 License
 

@@ -1,3 +1,17 @@
 {
-	"extends": "n0bodysec"
+	"extends": [
+		"@n0bodysec"
+	],
+	"rules": {
+		"import/extensions": [
+			"error",
+			"ignorePackages",
+			{
+				"js": "always",
+				"mjs": "always",
+				"jsx": "always"
+			}
+		],
+		"arrow-body-style": "off"
+	}
 }

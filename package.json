@@ -1,27 +1,14 @@
 {
-  "name": "valstratsjs",
-  "version": "1.1.2",
+  "name": "@n0bodysec/valstrats-js",
+  "version": "1.2.0",
   "description": "An unofficial Hitbox's Valorant DB API",
   "main": "index.js",
   "type": "module",
-  "dependencies": {
-    "@feathersjs/authentication-client": "^4.5.15",
-    "@feathersjs/feathers": "^4.5.15",
-    "@feathersjs/socketio-client": "^4.5.15",
-    "socket.io-client": "2.5.0"
-  },
-  "devDependencies": {
-    "dotenv": "^16.0.1",
-    "eslint": "^8.23.0",
-    "eslint-config-n0bodysec": "github:n0bodysec/eslint-config-n0bodysec"
-  },
-  "scripts": {
-    "test": "node test/test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/n0bodysec/valstrats.js.git"
-  },
+  "homepage": "https://github.com/n0bodysec/valstrats.js#readme",
+  "repository": "https://github.com/n0bodysec/valstrats.js.git",
+  "bugs": "https://github.com/n0bodysec/valstrats.js/issues",
+  "author": "Nobody <admin@n0bodysec.com> (https://n0bodysec.com)",
+  "license": "MIT",
   "keywords": [
     "valstrats",
     "valstrats.js",
@@ -30,10 +17,15 @@
     "database",
     "unofficial"
   ],
-  "author": "Nobody <admin@n0bodysec.com> (https://n0bodysec.com)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/n0bodysec/valstrats.js/issues"
+  "dependencies": {
+    "@feathersjs/authentication-client": "^4.5.15",
+    "@feathersjs/feathers": "^4.5.15",
+    "@feathersjs/socketio-client": "^4.5.15",
+    "socket.io-client": "4.5.2"
   },
-  "homepage": "https://github.com/n0bodysec/valstrats.js#readme"
+  "devDependencies": {
+    "@n0bodysec/eslint-config": "^2.0.1",
+    "eslint": "^8.24.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
 }
