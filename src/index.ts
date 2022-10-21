@@ -43,3 +43,6 @@ export default class API
 		});
 	}
 }
+
+export { API };
+// ^^ export hack
