@@ -4,13 +4,13 @@ import socketio from '@feathersjs/socketio-client';
 import io from 'socket.io-client';
 import constants from './utils/constants';
 
-import Account from './account/index';
-import Services from './services/index';
-import Strats from './strats/index';
-import User from './user/index';
-import Utils from './utils/index';
+import { Account } from './account/index';
+import { Services } from './services/index';
+import { Strats } from './strats/index';
+import { User } from './user/index';
+import { Utils } from './utils/index';
 
-export default class API
+export class API
 {
 	socket = io(constants.backendUrl, { transports: ['websocket'], upgrade: false });
 	client = feathers().configure(socketio(this.socket, { timeout: 10000 })).configure(auth());
@@ -43,6 +43,3 @@ export default class API
 		});
 	}
 }
-
-export { API };
-// ^^ export hack

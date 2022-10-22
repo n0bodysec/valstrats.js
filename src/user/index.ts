@@ -1,7 +1,7 @@
-import API from '..';
+import { API } from '..';
 import constants from '../utils/constants';
 
-export default class User
+export class User
 {
 	constructor(private base: API) { }
 

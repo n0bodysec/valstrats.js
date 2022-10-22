@@ -8,12 +8,7 @@ module.exports = {
 		'plugin:import/typescript',
 	],
 	rules: {
-		'import/extensions': 'off',
 		'import/no-cycle': 'off',
-		'lines-between-class-members': 'off',
-		'no-unused-vars': 'off',
-		'no-useless-constructor': 'off',
-		'@typescript-eslint/no-unused-vars': 'error',
-		'@typescript-eslint/no-useless-constructor': 'error',
+		'import/prefer-default-export': 'off',
 	},
 };
