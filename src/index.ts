@@ -1,6 +1,3 @@
-import auth from '@feathersjs/authentication-client';
-import feathers from '@feathersjs/feathers';
-import socketio from '@feathersjs/socketio-client';
 import io from 'socket.io-client';
 import constants from './utils/constants';
 
@@ -13,8 +10,6 @@ import { Utils } from './utils/index';
 export class API
 {
 	socket = io(constants.backendUrl, { transports: ['websocket'], upgrade: false });
-	client = feathers().configure(socketio(this.socket, { timeout: 10000 })).configure(auth());
-	authenticated = false;
 	accessToken?: string | undefined;
 	strats: Strats = new Strats(this);
 	account: Account = new Account(this);
@@ -32,14 +27,6 @@ export class API
 	{
 		this.accessToken = accessToken;
 
-		this.client.hooks({
-			error(context)
-			{
-				// if (error.message === 'jwt expired') this.authenticated = false;
-				throw Error(context.error.message);
-
-				// return context;
-			},
-		});
+		// TODO: add jwt expiration check
 	}
 }

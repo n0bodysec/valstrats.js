@@ -14,17 +14,12 @@ export class Services
 		});
 	});
 
-	uploadStratImage = async (convertedBase: string) =>
+	uploadStratImage = async (convertedBase: string) => new Promise((resolve, reject) =>
 	{
-		if (!this.base.authenticated) throw new Error('you are not authenticated');
-
-		return new Promise((resolve, reject) =>
+		this.base.socket.emit('create', constants.services.uploadStratImage, { uri: convertedBase }, (err: string, res: unknown) => // convertedBase: data:image/png;base64,...
 		{
-			this.base.socket.emit('create', constants.services.uploadStratImage, { uri: convertedBase }, (err: string, res: unknown) => // convertedBase: data:image/png;base64,...
-			{
-				if (err) reject(err);
-				else resolve(res); // image path: dist/extras/${res.id}
-			});
+			if (err) reject(err);
+			else resolve(res); // image path: dist/extras/${res.id}
 		});
-	};
+	});
 }
