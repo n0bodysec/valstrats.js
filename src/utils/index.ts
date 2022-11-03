@@ -31,5 +31,5 @@ export class Utils
 		}
 	});
 
-	find = async (service: string, limit = '-1', skip = 0) => this.emit('find', service, { $limit: limit, $skip: skip });
+	find = async (service: string, params = { $limit: '-1', $skip: 0 }) => this.emit('find', service, params);
 }

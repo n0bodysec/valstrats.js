@@ -10,7 +10,9 @@ export class Account
 	});
 
 	findSavedStrats = async (limit = 6, skip = 0) => this.base.services.strats.find({
-		$limit: limit, $skip: skip, $sort: { createdAt: -1 }, saved: true,
+		query: {
+			$limit: limit, $skip: skip, $sort: { createdAt: -1 }, saved: true,
+		},
 	});
 
 	saveStrat = async (uuid: string, save = true) =>
