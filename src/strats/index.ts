@@ -1,45 +1,18 @@
 import { API } from '..';
-import constants from '../utils/constants';
 
 export class Strats
 {
 	constructor(private base: API) { }
 
-	get = async (uuid: string) => new Promise((resolve, reject) =>
-	{
-		this.base.socket.emit('get', constants.services.strats, uuid, (err: string, res: unknown) =>
-		{
-			if (err) reject(err);
-			else resolve(res);
-		});
+	get = async (uuid: string) => this.base.services.strats.get(uuid);
+
+	getUsersPosts = async (uuid: string, limit = 10, skip = 0) => this.base.services.stratUserPost.find({
+		stratId: uuid, $limit: limit, $skip: skip, $sort: { createdAt: -1 },
 	});
 
-	getUsersPosts = async (uuid: string, limit = 10, skip = 0) => new Promise((resolve, reject) =>
-	{
-		this.base.socket.emit('find', constants.services.stratUserPost, {
-			stratId: uuid, $limit: limit, $skip: skip, $sort: { createdAt: -1 },
-		}, (err: string, res: unknown) =>
-		{
-			if (err) reject(err);
-			else resolve(res);
-		});
-	});
+	getInfo = async () => this.base.services.strats.find({ $limit: 0, $skip: 0, $sort: { createdAt: -1 } });
 
-	getInfo = async () => new Promise((resolve, reject) =>
-	{
-		this.base.socket.emit('find', constants.services.strats, { $limit: 0, $skip: 0, $sort: { createdAt: -1 } }, (err: string, res: unknown) =>
-		{
-			if (err) reject(err);
-			else resolve(res);
-		});
-	});
+	getData = async (limit = 6, skip = 0) => this.base.services.strats.find({ $limit: limit, $skip: skip, $sort: { createdAt: -1 } });
 
-	getData = async (limit = 6, skip = 0) => new Promise((resolve, reject) =>
-	{
-		this.base.socket.emit('find', constants.services.strats, { $limit: limit, $skip: skip, $sort: { createdAt: -1 } }, (err: string, res: unknown) =>
-		{
-			if (err) reject(err);
-			else resolve(res);
-		});
-	});
+	search = async (keywords: string) => this.base.services.stratsSearch.find({ keywords });
 }

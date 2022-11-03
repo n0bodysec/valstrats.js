@@ -16,8 +16,13 @@ export default Object.freeze({
 		stratUserPost: 'strat-user-post',
 		reportStrat: 'report-strat',
 		stratUserRanking: 'strat-user-ranking',
-		uploadStratVideo: 'upload-strat-video',
+		uploadStratVideo: 'upload-video-cdn',
 		stratGenVideoLink: 'strat-gen-videolink',
+		stratsSearch: 'strats-search',
+		stratUserRankingMonthly: 'strat-user-ranking-monthly',
+
+		// deprecated/removed?
+		uploadStratVideoOld: 'upload-strat-video',
 	},
 
 	sortTypes: {
