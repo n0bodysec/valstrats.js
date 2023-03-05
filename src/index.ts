@@ -28,6 +28,7 @@ export class API
 		users: this.client.service(constants.services.users) as Service,
 		characters: this.client.service(constants.services.characters) as Service,
 		teams: this.client.service(constants.services.teams) as Service,
+		players: this.client.service(constants.services.players) as Service,
 		maps: this.client.service(constants.services.maps) as Service,
 		tournaments: this.client.service(constants.services.tournaments) as Service,
 		regions: this.client.service(constants.services.regions) as Service,
@@ -43,6 +44,9 @@ export class API
 		stratGenVideoLink: this.client.service(constants.services.stratGenVideoLink) as Service,
 		stratsSearch: this.client.service(constants.services.stratsSearch) as Service,
 		stratUserRankingMonthly: this.client.service(constants.services.stratUserRankingMonthly) as Service,
+		articleCategories: this.client.service(constants.services.articleCategories) as Service,
+		articles: this.client.service(constants.services.articles) as Service,
+		articleGenerateTranslation: this.client.service(constants.services.articleGenerateTranslation) as Service,
 		uploadStratVideoOld: this.client.service(constants.services.uploadStratVideoOld) as Service,
 	};
 

@@ -1,10 +1,12 @@
 export default Object.freeze({
 	backendUrl: 'https://backend.valostrats.com', // https://backend.valostrats.com/socket.io/
+	cdnUrl: 'https://media.valostrats.com',
 
 	services: {
 		users: 'users',
 		characters: 'characters',
 		teams: 'teams',
+		players: 'players',
 		maps: 'maps',
 		tournaments: 'tournaments',
 		regions: 'regions',
@@ -20,6 +22,9 @@ export default Object.freeze({
 		stratGenVideoLink: 'strat-gen-videolink',
 		stratsSearch: 'strats-search',
 		stratUserRankingMonthly: 'strat-user-ranking-monthly',
+		articleCategories: 'article-categories',
+		articles: 'articles',
+		articleGenerateTranslation: 'article-translator',
 
 		// deprecated/removed?
 		uploadStratVideoOld: 'upload-strat-video',
